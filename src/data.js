@@ -42,7 +42,7 @@ export const skills = [
   { name: 'Java', icon: devicon('java'), tone: 'red' },
   { name: 'C/C++', icon: devicon('cplusplus'), tone: 'blue' },
   { name: 'FastAPI', icon: devicon('fastapi'), tone: 'green' },
-  { name: 'Django', icon: devicon('django'), tone: 'green' },
+  { name: 'Django', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg', tone: 'green' },
   { name: 'Spring Boot', icon: devicon('spring'), tone: 'green' },
   { name: 'Node.js', icon: devicon('nodejs'), tone: 'green' },
   { name: 'LangGraph', icon: '/assets/skill-ai.svg', tone: 'purple' },
@@ -59,8 +59,20 @@ export const skills = [
   { name: 'VS Code', icon: devicon('vscode'), tone: 'blue' },
 ]
 
+// The calculation uses calendar months, so the value advances automatically on the 1st of each month.
+export const experienceStartDate = '2024-03-01'
+
+export const getTotalExperienceMonths = (now = new Date()) => {
+  const start = new Date(`${experienceStartDate}T00:00:00`)
+  let months = (now.getFullYear() - start.getFullYear()) * 12
+    + (now.getMonth() - start.getMonth())
+
+  if (now.getDate() < start.getDate()) months -= 1
+  return Math.max(0, months)
+}
+
 export const stats = [
-  { value: '30 months', label: 'Total Experience' }, // Put a logic of date time where after begin of new calenddar month, this value should automatically update to reflect the new total experience in months.
+  { value: 'experience', label: 'Total Experience' },
   { value: '4', label: 'Featured Projects' },
   { value: '19', label: 'Core Skills' },
   { value: 'AI Full Stack', label: 'Engineering Focus' },

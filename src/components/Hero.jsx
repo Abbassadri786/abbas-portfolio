@@ -1,5 +1,18 @@
+import { useEffect, useState } from "react";
 import Icon from "./Icon";
-export default function Hero({ profile }) {
+import { getTotalExperienceMonths } from "../data";
+
+export default function Hero({ profile, stats }) {
+  const [experienceMonths, setExperienceMonths] = useState(() => getTotalExperienceMonths());
+
+  useEffect(() => {
+    const refreshExperience = () => setExperienceMonths(getTotalExperienceMonths(new Date()));
+    const interval = window.setInterval(refreshExperience, 60 * 1000);
+    return () => window.clearInterval(interval);
+  }, []);
+
+  const mailHref = `mailto:${profile.email}?subject=${encodeURIComponent("Hello Abbas")}`;
+
   return (
     <section className="hero section">
       <div className="hero-copy reveal">
@@ -14,10 +27,14 @@ export default function Hero({ profile }) {
           engineering, AI systems and product-focused development meet.
         </p>
         <div className="hero-actions">
-          <a className="button button--ink" href={profile.resume} target="_blank" rel="noreferrer">
-            View Resume <Icon name="arrow" size={17} />
+          <a
+            className="button button--ink"
+            href={profile.resume}
+            download="Abbas_Sadriwala-Resume.pdf"
+          >
+            Download Resume <Icon name="file" size={17} />
           </a>
-          <a className="button button--paper" href={`mailto:${profile.email}`}>
+          <a className="button button--paper" href={mailHref}>
             Let’s talk <Icon name="mail" size={16} />
           </a>
         </div>
@@ -38,25 +55,37 @@ export default function Hero({ profile }) {
           >
             <Icon name="linkedin" />
           </a>
-          <a href={`mailto:${profile.email}`} aria-label="Email">
+          <a href={mailHref} aria-label="Email Abbas">
             <Icon name="mail" />
           </a>
         </div>
       </div>
+
       <div className="hero-card-wrap reveal reveal--delay-1">
         <div className="hero-card-shadow" />
-        <article className="hero-card">
-          <div className="hero-photo-wrap">
-            <img src={profile.photo} alt="Portrait placeholder" />
+        <article className="hero-card hero-stats-card">
+          <div className="hero-stats-header">
+            <div>
+              <p className="card-label">QUICK STATS</p>
+              <h2>At a glance.</h2>
+            </div>
+            <span className="hero-stats-badge">LIVE</span>
           </div>
-          <div className="hero-card-copy">
-            <p className="card-label">{profile.title}</p>
-            <h2>
-              Build. Ship.
-              <br />
-              <em>Improve.</em>
-            </h2>
+          <div className="hero-stats-list">
+            {stats.map((stat) => (
+              <div className="hero-stat-row" key={stat.label}>
+                <span>{stat.label}</span>
+                <strong>
+                  {stat.value === "experience"
+                    ? `${experienceMonths} months`
+                    : stat.value}
+                </strong>
+              </div>
+            ))}
           </div>
+          <p className="hero-stats-note">
+            Growing with every project, challenge, and line of code.
+          </p>
         </article>
       </div>
     </section>

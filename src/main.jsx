@@ -13,7 +13,6 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Footer from "./components/Footer";
 import {
-  Stats,
   About,
   Projects,
   Skills,
@@ -44,8 +43,7 @@ function App() {
       </a>
       <Header profile={profile} />
       <main id="top">
-        <Hero profile={profile} />
-        <Stats stats={stats} />
+        <Hero profile={profile} stats={stats} />
         <About profile={profile} />
         <Projects projects={projects} profile={profile} />
         <Skills

@@ -1293,3 +1293,168 @@ img {
         transform: none
     }
 }
+/* ---------- Portfolio refinements ---------- */
+.hero-stats-card {
+    min-height: 540px;
+    padding: 30px 28px;
+    justify-content: flex-start;
+}
+
+.hero-stats-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+}
+
+.hero-stats-header h2 {
+    margin: 10px 0 0;
+    font-size: 42px;
+    line-height: 1;
+    letter-spacing: -.05em;
+}
+
+.hero-stats-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid rgba(198, 107, 107, .35);
+    border-radius: 999px;
+    padding: 7px 10px;
+    color: var(--accent-soft);
+    font: 600 9px 'JetBrains Mono', monospace;
+    letter-spacing: .12em;
+}
+
+.hero-stats-badge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent-soft);
+    box-shadow: 0 0 0 4px rgba(198, 107, 107, .08);
+}
+
+.hero-stats-list {
+    display: grid;
+    gap: 0;
+    margin-top: 6px;
+}
+
+.hero-stat-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.hero-stat-row span {
+    color: var(--muted);
+    font: 600 10px 'JetBrains Mono', monospace;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.hero-stat-row strong {
+    color: var(--text);
+    font-size: 20px;
+    line-height: 1.1;
+    letter-spacing: -.035em;
+    text-align: right;
+}
+
+.hero-stats-note {
+    margin: auto 0 0;
+    padding-top: 20px;
+    color: var(--muted-2);
+    font: 10px/1.6 'JetBrains Mono', monospace;
+    letter-spacing: .04em;
+}
+
+/* Keep project screenshots fully visible without changing the card/grid dimensions. */
+.project-media {
+    padding: 12px;
+    background: #1d1d1d;
+}
+
+.project-media img {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    padding: 0;
+    z-index: 1;
+    image-rendering: auto;
+}
+
+.project-card--light .project-media {
+    background: #292929;
+}
+
+.project-media-grid {
+    z-index: 0;
+}
+
+/* Technology badges in projects and the journey timeline. */
+.stack-row span,
+.tag-row span {
+    background: rgba(154, 43, 43, .13);
+    border-color: rgba(198, 107, 107, .28);
+    color: #e7b1b1;
+    transition: background .2s ease, border-color .2s ease, color .2s ease, transform .2s ease;
+}
+
+.stack-row span:hover,
+.tag-row span:hover {
+    background: rgba(154, 43, 43, .28);
+    border-color: rgba(198, 107, 107, .52);
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.contact-links span {
+    color: var(--muted);
+}
+
+.contact-links span svg {
+    flex: 0 0 auto;
+}
+
+.contact-links a:hover span {
+    color: var(--accent-soft);
+}
+
+@media(max-width:960px) {
+    .hero-stats-card {
+        min-height: 500px;
+    }
+}
+
+@media(max-width:640px) {
+    .hero-stats-card {
+        min-height: 0;
+        padding: 24px 21px;
+    }
+
+    .hero-stats-header h2 {
+        font-size: 36px;
+    }
+
+    .hero-stat-row {
+        padding: 15px 0;
+    }
+
+    .hero-stat-row strong {
+        font-size: 17px;
+    }
+
+    .project-media {
+        padding: 9px;
+    }
+}

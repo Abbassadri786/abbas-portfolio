@@ -22,6 +22,19 @@ export default function Icon({ name, size = 18, stroke = 1.8 }) {
         <path d="M6 2h3l1.5 4-2 1.6a15 15 0 0 0 6.9 6.9L17 12.5l4 1.5v3c0 1.1-.9 2-2 2C10.7 19 3 11.3 3 3a1 1 0 0 1 1-1h2z" />
       </>
     ),
+    file: (
+      <>
+        <path d="M6 3h8l4 4v14H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" />
+        <path d="M14 3v5h5M8 13h8M8 17h6" />
+      </>
+    ),
+    leetcode: (
+      <>
+        <path d="M14.5 4.5 9 10l5.5 5.5" />
+        <path d="M9 10h10" />
+        <path d="M5 5.5 2.5 8a5 5 0 0 0 0 7l3.8 3.8a5 5 0 0 0 7.1 0l1.1-1.1" />
+      </>
+    ),
     arrow: (
       <>
         <path d="M5 12h13" />
@@ -46,6 +59,7 @@ export default function Icon({ name, size = 18, stroke = 1.8 }) {
       </>
     ),
   };
+
   return (
     <svg
       width={size}

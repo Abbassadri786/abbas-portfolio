@@ -302,13 +302,16 @@ export function Contact({ profile }) {
           </p>
         </div>
         <div className="contact-links">
-          <a href={profile.resume} target="_blank" rel="noreferrer">
+          <a
+            href={profile.resume}
+            download="Abbas_Sadriwala-Resume.pdf"
+          >
             <span>
               <Icon name="file" /> Resume
             </span>
             <strong>Download Resume</strong>
           </a>
-          <a href={`mailto:${profile.email}`}>
+          <a href={`mailto:${profile.email}?subject=${encodeURIComponent("Hello Abbas")}`}>
             <span>
               <Icon name="mail" /> Email
             </span>
