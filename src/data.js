@@ -33,6 +33,20 @@ export const projects = [
     stack: ['Django', 'React', 'JavaScript', 'Bootstrap', 'MySQL', 'AI Chatbot'],
     link: 'https://github.com/Abbassadri786/Hotel-Booking-System', image: '/assets/hbs.png', variant: 'light',
   },
+    {
+    title: 'Matrix Dashboard',
+    eyebrow: 'Business Analytics Platform',
+    description:
+      'Built a full-stack data analytics dashboard using Django REST Framework and React to transform table-based business data into interactive visualizations and actionable performance insights.',
+    bullets: [
+      'Developed a flexible file ingestion pipeline using Pandas and OpenPyXL to parse multi-level Excel headers, normalize metrics and persist dashboard data into structured Django models.',
+      'Implemented analytics views covering Bookings, New Logos, ACV, ARR, Executive Summary and performance metrics through REST APIs powering the React frontend.',
+      'Added multi-sheet AP analytics across Pre-Agentic, Go-Live and Post-Agentic stages with monthly performance tracking.',
+      'Designed authenticated Excel uploads with automated data processing, enabling users to refresh dashboard insights without manually entering data.',
+    ],
+    stack: [ 'Django', 'React', 'Python', 'Pandas', 'MySQL', 'OpenPyXL', 'REST API', 'Excel Parsing', 'Data Visualization'],
+    link: 'https://github.com/Abbassadri786/Matrix-Dashboard', image: '/assets/matrix-dashboard.png', variant: 'dark',
+  },
 ]
 
 const devicon = (slug) => `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${slug}/${slug}-original.svg`
