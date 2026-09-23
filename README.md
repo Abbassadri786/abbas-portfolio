@@ -1,4 +1,4 @@
-# My Name — Card-Themed React Portfolio
+# Abbas — Card-Themed React Portfolio
 
 A production-ready React/Vite portfolio implementation inspired by the provided card-themed reference website and customized with the supplied portfolio content.
 
