@@ -1,7 +1,6 @@
 export const profile = {
   name: 'Abbas Sadriwala',
   title: 'Software Developer | AI Engineer | Full-Stack Developer',
-  about: 'Dynamic Software Developer adept at engineering elegant solutions for complex challenges. Proficient in diverse tech stacks, I excel in innovative, team-driven environments. Driven to create impactful and efficient software that makes a difference.',
   resume: '/assets/resume.pdf',
   email: 'abbassadri786@gmail.com',
   phone: '+91-887192XXX9',
@@ -14,23 +13,25 @@ export const profile = {
 export const projects = [
   {
     title: 'HireLens AI', eyebrow: 'AI-Powered Recruitment Screening Platform',
-    description: 'Integrated automated resume parsing and data normalization pipelines to standardize candidate submissions and reduce manual preprocessing for hiring teams.',
+    description: 'Built a recruitment screening platform that helps recruiters process candidate resumes through structured ATS scoring, semantic matching, and AI-generated explanations instead of relying on an LLM as the sole scoring mechanism.',
     bullets: [
-      'Built a multi-tenant recruitment SaaS using PostgreSQL/pgvector and LangGraph to asynchronously parse, semantically match and rank candidate resumes against job requirements.',
-      'Implemented hybrid candidate scoring combining deterministic skill matching, vector similarity and LLM-based reasoning, with explainable evidence for each score.',
-      'Designed JWT/HttpOnly-cookie authentication, rate limiting, audit logging and AI-provider fallback between Gemini and Groq.',
+      'Designed a FastAPI backend with organization-level roles, HTTP-only authentication cookies, refresh-token sessions, CSRF protection and protected API routes.',
+      'Built a screening pipeline that combines keyword matching, experience fit, resume completeness and local sentence-transformer embeddings to generate an explainable candidate score.',
+      'Implemented secure resume processing with PDF/DOCX validation, file-size and MIME checks, SHA-256 hashing and PII redaction before optional external AI processing.',
     ],
-    stack: ['FastAPI', 'PostgreSQL', 'pgvector', 'LangGraph', 'React', 'Gemini', 'Groq'],
+    stack: ['FastAPI', 'PostgreSQL', 'pgvector', 'Sentence Transformers', 'React', 'Gemini', 'Docker'],
     link: 'https://github.com/Abbassadri786/hirelens-ai', image: '/assets/hirelens-ai.png', variant: 'dark',
   },
   {
-    title: 'Hotel Booking System', eyebrow: 'Full-Stack Booking Platform',
-    description: 'Deployed a scalable hotel booking platform that processed 1,200+ monthly reservations, using Django and React to achieve a 40% reduction in booking-related user queries and support tickets within 6 months.',
+    title: 'The Amber Hotel', eyebrow: 'Hotel Booking & Customer Support Platform',
+    description: 'Built a full-stack hotel booking system with separate customer and admin workflows for room discovery, reservations, cancellations, customer management and AI-assisted support.',
     bullets: [
-      'Implemented advanced filtering and sorting features for booking records with JavaScript and Bootstrap, enabling staff to efficiently locate reservations and enhance workflow productivity.',
-      'Deployed a conversational AI interface to deliver instant responses to user inquiries and streamline chat history management.',
+      'Implemented Spring Boot REST APIs with a MySQL-backed booking workflow covering room availability, date-based search, reservations, cancellations and post-stay feedback.',
+      'Built separate customer and admin workflows, including room CRUD, booking filters, reservation updates and customer management.',
+      'Integrated a LLaMA Groq 7B chatbot for room availability queries and customer support, with conversation history and new-thread management.',
+      'Implemented authentication and admin access-code flows to separate customer operations from administrative booking management.',
     ],
-    stack: ['Django', 'React', 'JavaScript', 'Bootstrap', 'MySQL', 'AI Chatbot'],
+    stack: ['Java', 'Spring Boot', 'React', 'MySQL', 'LLaMA', 'Groq'],
     link: 'https://github.com/Abbassadri786/Hotel-Booking-System', image: '/assets/hbs.png', variant: 'light',
   },
     {
@@ -39,12 +40,12 @@ export const projects = [
     description:
       'Built a full-stack data analytics dashboard using Django REST Framework and React to transform table-based business data into interactive visualizations and actionable performance insights.',
     bullets: [
-      'Developed a flexible file ingestion pipeline using Pandas and OpenPyXL to parse multi-level Excel headers, normalize metrics and persist dashboard data into structured Django models.',
-      'Implemented analytics views covering Bookings, New Logos, ACV, ARR, Executive Summary and performance metrics through REST APIs powering the React frontend.',
-      'Added multi-sheet AP analytics across Pre-Agentic, Go-Live and Post-Agentic stages with monthly performance tracking.',
-      'Designed authenticated Excel uploads with automated data processing, enabling users to refresh dashboard insights without manually entering data.',
+      'Built a Django REST Framework ingestion pipeline using Pandas and OpenPyXL to process Excel files, including multi-sheet datasets, and persist normalized data into MySQL.',
+      'Implemented REST APIs powering dashboard views for bookings, new logos, ACV, ARR, revenue and executive-level metrics.',
+      'Added authenticated Excel upload workflows for financial and Agentic AP datasets, with server-side processing and structured database insertion.',
+      'Implemented multi-sheet AP analytics covering Pre-Agentic, Go-Live and Post-Agentic stages with monthly performance tracking.',
     ],
-    stack: [ 'Django', 'React', 'Python', 'Pandas', 'MySQL', 'OpenPyXL', 'REST API', 'Excel Parsing', 'Data Visualization'],
+    stack: [ 'Django', 'Django REST Framework', 'React', 'Python', 'MySQL', 'Pandas', 'OpenPyXL'],
     link: 'https://github.com/Abbassadri786/Matrix-Dashboard', image: '/assets/matrix-dashboard.png', variant: 'dark',
   },
 ]
@@ -88,9 +89,8 @@ export const getTotalExperienceMonths = (now = new Date()) => {
 export const stats = [
   { value: 'experience', label: 'Total Experience' },
   { value: '4', label: 'Featured Projects' },
-  { value: '19', label: 'Core Skills' },
-  { value: 'AI Full Stack', label: 'Engineering Focus' },
-  { value: '24/7', label: 'Curiosity Mode' },
+  { value: '19', label: 'Technologies' },
+  { value: 'AI + Backend', label: 'Engineering Focus' },
 ]
 
 export const timeline = [
@@ -101,7 +101,7 @@ export const timeline = [
 
 export const achievements = [
   ['Epic', 'Code Warrior', 'Mastered multiple programming languages', '+500 XP'],
-  ['Epic', 'Project Master', 'Completed 5+ full-stack projects', '+750 XP'],
+  ['Epic', 'Project Master', 'Completed 4+ full-stack projects', '+750 XP'],
   ['Legendary', 'AI Integrator', 'RAG, LangGraph and multi-provider AI workflows', '+1000 XP'],
   ['Rare', 'Problem Solver', 'Solved 500+ coding challenges', '+200 XP'],
   ['Common', 'Team Player', 'Collaborated on multiple team projects', '+300 XP'],

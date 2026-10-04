@@ -21,7 +21,7 @@ export function About({ profile }) {
     <section id="about" className="about section">
       <div className="section-heading reveal">
         <div>
-          <p className="eyebrow">Let’s Start With My Name</p>
+          <p className="eyebrow">Let’s Start</p>
           <h2>
             About the
             <br />
@@ -35,12 +35,11 @@ export function About({ profile }) {
       </div>
       <div className="about-grid">
         <article className="about-copy reveal">
-          <p>{profile.about}</p>
-          <div className="about-rule" />
+
           <div className="about-notes">
             <div>
               <span>What I build</span>
-              <strong>Backend that works, AI stuff, Python + Automation + AI, and websites—depends on the problem at hand</strong>
+              <strong>Backend that works, AI stuff, Python + Automation + AI, and websites-depends on the problem at hand</strong>
             </div>
             <div>
               <span>Prove Your Interest in Coding!</span>

@@ -314,7 +314,7 @@ img {
 }
 
 .hero-card {
-    min-height: 540px;
+    min-height: 500px;
     padding: 25px;
     display: flex;
     flex-direction: column;
@@ -472,50 +472,67 @@ img {
 
 .about-grid {
     display: grid;
-    grid-template-columns: 1.15fr .85fr;
-    gap: 60px;
-    align-items: start
+    grid-template-columns: 1.3fr .7fr;
+    gap: 72px;
+    align-items: start;
 }
 
 .about-copy {
-    font-size: clamp(20px, 2.4vw, 31px);
-    line-height: 1.42;
-    letter-spacing: -.03em
+    font-size: clamp(21px, 2.5vw, 32px);
+    line-height: 1.45;
+    letter-spacing: -.025em;
 }
 
 .about-copy p {
     margin: 0;
-    max-width: 820px
+    max-width: 900px;
 }
 
 .about-rule {
     height: 1px;
     background: var(--line);
-    margin: 45px 0 26px
+    margin: 35px 0 30px;
 }
 
 .about-notes {
     display: grid;
-    gap: 16px
+    gap: 0;
 }
 
 .about-notes div {
     display: grid;
-    grid-template-columns: 150px 1fr;
-    gap: 15px;
-    font-size: 13px
+    grid-template-columns: 170px 1fr;
+    gap: 24px;
+    padding: 19px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 16px;
+    line-height: 1.55;
+}
+
+.about-notes div:first-child {
+    padding-top: 0;
+}
+
+.about-notes div:last-child {
+    border-bottom: 0;
 }
 
 .about-notes span {
     font-family: 'JetBrains Mono', monospace;
     color: var(--muted);
     text-transform: uppercase;
-    font-size: 11px;
-    padding-top: 4px
+    font-size: 10px;
+    line-height: 1.5;
+    letter-spacing: .09em;
+    padding-top: 4px;
 }
 
 .about-notes strong {
-    font-weight: 500
+    font-weight: 500;
+    color: #e8e8e8;
+    font-size: 16px;
+    line-height: 1.55;
+    letter-spacing: -.01em;
 }
 
 .about-card {
@@ -525,7 +542,7 @@ img {
     border-radius: 24px;
     padding: 20px;
     transform: rotate(-1.8deg);
-    box-shadow: 15px 17px 0 rgba(0, 0, 0, .18)
+    box-shadow: 15px 17px 0 rgba(0, 0, 0, .18);
 }
 
 .about-card-top {
@@ -535,7 +552,7 @@ img {
     font-size: 11px;
     font-family: 'JetBrains Mono', monospace;
     letter-spacing: .12em;
-    color: var(--muted)
+    color: var(--muted);
 }
 
 .about-card-avatar {
@@ -546,13 +563,13 @@ img {
     position: relative;
     overflow: hidden;
     display: grid;
-    place-items: center
+    place-items: center;
 }
 
 .about-card-footer strong {
     display: block;
     font-size: 29px;
-    letter-spacing: -.04em
+    letter-spacing: -.04em;
 }
 
 .about-card-footer span {
@@ -562,7 +579,7 @@ img {
     text-transform: uppercase;
     color: var(--muted);
     font-size: 10px;
-    letter-spacing: .1em
+    letter-spacing: .1em;
 }
 
 .projects {
@@ -1295,8 +1312,8 @@ img {
 }
 /* ---------- Portfolio refinements ---------- */
 .hero-stats-card {
-    min-height: 540px;
-    padding: 30px 28px;
+    min-height: 420px;
+    padding: 28px 28px 24px;
     justify-content: flex-start;
 }
 
@@ -1305,13 +1322,13 @@ img {
     align-items: flex-start;
     justify-content: space-between;
     gap: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 18px;
     border-bottom: 1px solid var(--line);
 }
 
 .hero-stats-header h2 {
-    margin: 10px 0 0;
-    font-size: 42px;
+    margin: 9px 0 0;
+    font-size: 40px;
     line-height: 1;
     letter-spacing: -.05em;
 }
@@ -1340,7 +1357,7 @@ img {
 .hero-stats-list {
     display: grid;
     gap: 0;
-    margin-top: 6px;
+    margin-top: 4px;
 }
 
 .hero-stat-row {
@@ -1348,7 +1365,7 @@ img {
     align-items: center;
     justify-content: space-between;
     gap: 18px;
-    padding: 18px 0;
+    padding: 15px 0;
     border-bottom: 1px solid var(--line);
 }
 
@@ -1361,15 +1378,15 @@ img {
 
 .hero-stat-row strong {
     color: var(--text);
-    font-size: 20px;
+    font-size: 19px;
     line-height: 1.1;
     letter-spacing: -.035em;
     text-align: right;
 }
 
 .hero-stats-note {
-    margin: auto 0 0;
-    padding-top: 20px;
+    margin: 16px 0 0;
+    padding-top: 0;
     color: var(--muted-2);
     font: 10px/1.6 'JetBrains Mono', monospace;
     letter-spacing: .04em;
@@ -1407,7 +1424,11 @@ img {
     background: rgba(154, 43, 43, .13);
     border-color: rgba(198, 107, 107, .28);
     color: #e7b1b1;
-    transition: background .2s ease, border-color .2s ease, color .2s ease, transform .2s ease;
+    transition:
+        background .2s ease,
+        border-color .2s ease,
+        color .2s ease,
+        transform .2s ease;
 }
 
 .stack-row span:hover,
@@ -1431,27 +1452,73 @@ img {
 }
 
 @media(max-width:960px) {
+
     .hero-stats-card {
-        min-height: 500px;
+        min-height: 400px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1.15fr .85fr;
+        gap: 48px;
+    }
+
+    .about-notes div {
+        grid-template-columns: 145px 1fr;
+        gap: 18px;
     }
 }
 
+
+/* ================================
+   MOBILE
+   ================================ */
+
 @media(max-width:640px) {
+
     .hero-stats-card {
         min-height: 0;
-        padding: 24px 21px;
+        padding: 23px 21px;
     }
 
     .hero-stats-header h2 {
-        font-size: 36px;
+        font-size: 35px;
     }
 
     .hero-stat-row {
-        padding: 15px 0;
+        padding: 14px 0;
     }
 
     .hero-stat-row strong {
         font-size: 17px;
+    }
+
+    .hero-stats-note {
+        margin-top: 14px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .about-copy {
+        font-size: 22px;
+    }
+
+    .about-notes div {
+        grid-template-columns: 1fr;
+        gap: 7px;
+        padding: 17px 0;
+    }
+
+    .about-notes strong {
+        font-size: 16px;
+        line-height: 1.55;
+    }
+
+    .about-notes span {
+        font-size: 10px;
+        padding-top: 0;
     }
 
     .project-media {
